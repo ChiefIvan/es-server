@@ -1,0 +1,50 @@
+{% extends "index.html" %} {% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}" />
+<title>EventSync | Forgot Password</title>
+{% endblock %} {% block content %} {% with messages =
+get_flashed_messages(with_categories=true) %} {% if messages %} {%for category,
+message in messages %} {%if category == "error"%}
+<div id="message" class="message">
+  <span>{{ message["error"] }}</span>
+</div>
+{%endif%} {% endfor %} {% endif %} {% endwith %}
+<form method="POST" autocomplete="off">
+  <div class="label-wrapper">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="60"
+      height="60"
+      viewBox="0 0 256 256"
+    >
+      <path
+        fill="orangered"
+        d="M236.8 188.09L149.35 36.22a24.76 24.76 0 0 0-42.7 0L19.2 188.09a23.51 23.51 0 0 0 0 23.72A24.35 24.35 0 0 0 40.55 224h174.9a24.35 24.35 0 0 0 21.33-12.19a23.51 23.51 0 0 0 .02-23.72M120 104a8 8 0 0 1 16 0v40a8 8 0 0 1-16 0Zm8 88a12 12 0 1 1 12-12a12 12 0 0 1-12 12"
+      />
+    </svg>
+    <h1>New Password</h1>
+    <p>Note: You can only change your password once every 7 days!</p>
+  <div class="input-wrapper">
+    <input
+      id="password"
+      name="password"
+      type="password"
+      placeholder=""
+      required
+    />
+    <label for="password">Password</label>
+  </div>
+  <div class="input-wrapper">
+    <input
+      id="password_confirm"
+      name="password_confirm"
+      type="password"
+      placeholder=""
+      required
+    />
+    <label for="password_confirm">Password (Confirm)</label>
+  </div>
+  <div class="button-wrapper">
+    <button type="submit">Change</button>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "index.html" %} {% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='message.css') }}" />
+<title>EventSync | Happy</title>
+{% endblock %} {% block content %}
+<section>
+  <h1>EventSync says:</h1>
+  <h3 style="color: {{content['color']}}">{{ content["content"] }}</h3>
+</section>
+{% endblock %}

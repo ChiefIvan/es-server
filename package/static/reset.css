@@ -1,0 +1,134 @@
+@import url("style.css");
+
+div.message {
+  width: 100%;
+  height: 3rem;
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: all ease-in-out 500ms;
+  animation: message 5500ms forwards;
+}
+
+@keyframes message {
+  0% {
+    opacity: 0;
+    top: -60px;
+  }
+  9.09% {
+    /* ~500ms / 5500ms */
+    opacity: 1;
+    top: 0;
+  }
+  90.91% {
+    /* ~5000ms / 5500ms */
+    opacity: 1;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    top: -60px;
+  }
+}
+
+form {
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+div.label-wrapper {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  color: var(--dark-theme-color-5);
+  font-weight: 900;
+  letter-spacing: -0.15rem;
+  word-spacing: 0.3rem;
+}
+
+p {
+  font-size: 0.8rem;
+  color: #ff0000;
+}
+
+div.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-block: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  transition: all ease-in-out 200ms;
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-bottom: 2px solid var(--light-theme-color-2);
+  outline: none;
+  font-weight: 900;
+}
+
+input:focus {
+  border-bottom-color: var(--dark-theme-color-6);
+}
+
+input:focus + label {
+  color: var(--dark-theme-color-6);
+}
+
+div.input-wrapper:focus-within label,
+input:not(:placeholder-shown) + label {
+  transform: translatey(-1.3rem);
+  font-size: 0.6rem;
+  padding-left: 0.3rem;
+}
+
+label {
+  position: absolute;
+  padding-left: 0.5rem;
+  transition: all ease-in-out 200ms;
+  z-index: -1;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--light-theme-color-6);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+div.button-wrapper {
+  margin-top: 2rem;
+}
+
+button {
+  width: 100%;
+
+  padding: 0.3rem 2rem;
+  background-color: #0053bd;
+  border-color: transparent;
+  border-radius: 0.5rem;
+  outline-color: var(--dark-theme-color-2);
+  transition: background 300ms;
+  color: white;
+}
+
+button:hover {
+  background-color: #0a5cff;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #4d9cf7;
+}

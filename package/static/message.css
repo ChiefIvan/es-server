@@ -1,0 +1,21 @@
+@import url("style.css");
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100dvh;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  color: var(--dark-theme-color-5);
+  font-weight: 900;
+  letter-spacing: -0.15rem;
+  word-spacing: 0.3rem;
+}
+
+p {
+}
